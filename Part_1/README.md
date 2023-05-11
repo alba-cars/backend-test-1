@@ -6,9 +6,7 @@ Contributor: Sethulakshmi
 Profile : https://www.linkedin.com/in/sethu-lakshmi-7358a4199/
 
 ## Installaion and setup project 
- install packages 
     npm insatll 
- run the project
     npm start
 
 ## Add blog post API
