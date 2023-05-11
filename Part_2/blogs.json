@@ -91,21 +91,10 @@
     "reference": "00009",
     "title": "hhjjjjjj",
     "description": "gggggg",
-    "main_image": "./images/714bf732864cf75d390f7c38203c15cd.jpg",
+    "main_image": "./images/cebabcc38cde01b1fb74926ad98156b7.jpg",
     "additional_images": [
-      "./images/457db18edfc33132c3d76a00354f5e35.jpg",
-      "./images/ba601988bbcc7e1c18544709b40c3e18.jpg"
-    ],
-    "date_time": 1684003207
-  },
-  {
-    "reference": "00010",
-    "title": "hhjjjjjj",
-    "description": "gggggg",
-    "main_image": "./images/fe8243a9932aa93c161cfca7a281109c.jpg",
-    "additional_images": [
-      "./images/48f487d93de0282be90a7995d019a1ef.jpg",
-      "./images/f8737e9efd214c781ce3c48c281257df.jpg"
+      "./images/d2042bf7623f0c5164ee3fbc2550cb23.jpg",
+      "./images/747d0cd514cb845d4bccd4f0aeba166b.jpg"
     ],
     "date_time": 1684003207
   }

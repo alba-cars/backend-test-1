@@ -4,6 +4,7 @@
   "description": "transaction fields mapper",
   "main": "index.js",
   "scripts": {
+    "test": "jest",
     "start": "nodemon app.js"
   },
   "dependencies": {
@@ -16,5 +17,9 @@
     "sharp": "^0.32.1"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^29.5.0",
+    "supertest": "^6.3.3"
+  }
 }

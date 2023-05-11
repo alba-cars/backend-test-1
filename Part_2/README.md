@@ -2,6 +2,8 @@
 
 Using JestJS add these tests to the Part 1 Test
 
+npm test 
+
 ## Add blog post succeeded Test
 
 This test should add a valid blog post with all fields
