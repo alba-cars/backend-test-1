@@ -1,9 +1,20 @@
-# NodeJS + ExpressJS APIS Test
+# NodeJS + ExpressJS Create post, Read posts and token authorization APIS 
 
-Using NodeJS and ExpressJS write these APIs
-Use any library
+## Contributor
+
+Contributor: Sethulakshmi
+Profile : https://www.linkedin.com/in/sethu-lakshmi-7358a4199/
+
+## Installaion and setup project 
+
+    npm insatll 
+
+    npm start
 
 ## Add blog post API
+
+    api - /api/blog/create
+    method - post 
 
 The API should accept these inputs:
 1) title (Min 5 characters, Max 50 characters, No special characters, REQUIRED)
@@ -21,7 +32,11 @@ What the API does:
 5) Saves the blog post in "blogs.json" file
 6) Return back the added blog post as json
 
+
 ## Get all blog posts API
+
+    api - /api/blog/all
+    method - get 
 
 What the API does:
 1) Reads all blog posts from "blogs.json"
@@ -37,13 +52,23 @@ So we will use a token to access the images
 
 ## Generate timed token for images API
 
+    api - /api/token/generate
+    method - post 
+    examle input parameter for image_path is - images/0ad61c60a124ab42ad1d6bedfdcb42f8.jpg
+
 The API should accept these inputs:
 1) image_path
 
 What the API does:
 1) Generates a token that will expire after 5 minutes for this exact image_path
 
+    -- use(save) this token for getting the image 
+
 ## Get image by token API
+
+    api - /api/token/image
+    method - post 
+    examle input parameter for image_path is - images/0ad61c60a124ab42ad1d6bedfdcb42f8.jpg
 
 The API should accept these inputs:
 1) image_path
