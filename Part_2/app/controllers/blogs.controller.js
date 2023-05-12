@@ -117,7 +117,10 @@ files.forEach(async (file) => {
 
     saveBlogPost(blogPost);
  
-    return res.json(blogPost);
+   return res.json(blogPost);
+
+
+
 }
 
 exports.all = async (req, res) => {

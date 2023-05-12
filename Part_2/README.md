@@ -2,6 +2,8 @@
 
 Using JestJS add these tests to the Part 1 Test
 
+npm install
+npm start 
 npm test 
 
 ## Add blog post succeeded Test
