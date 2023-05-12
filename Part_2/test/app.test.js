@@ -19,11 +19,11 @@ describe('API endpoints', () => {
           const response = await request(BASE_HREF)
             .post('/api/blog/create')
             .field('Content-Type', 'multipart/form-data')
-            .attach('main_image',  fs.createReadStream(path.join(__dirname, '0b0115bff84152bd38911257ad93ce02.jpg')))
-            .attach('additional_images',  fs.createReadStream(path.join(__dirname, '0b0115bff84152bd38911257ad93ce02.jpg')))
+            .attach('main_image',  fs.createReadStream(path.join(__dirname, 'mainImage.jpg')))
+            .attach('additional_images',  fs.createReadStream(path.join(__dirname, 'additionalImage.jpg')))
             .field(newPost);
             expect(response.status).toBe(200);
-           // expect(response.body.result).toMatchObject(newPost);
+            expect(response.body).toMatchObject(newPost);
         });
       });
 
@@ -31,18 +31,37 @@ describe('API endpoints', () => {
       describe('POST /api/blog/create', () => {
         it('should return an error message for missing required fields', async () => {
           const newPost = {
-            title: 'My Blog Title1',
+            title: 'My Blog Title2',
             date_time: 1684003207,
           };
       
           const response = await request(BASE_HREF)
           .post('/api/blog/create')
           .send(newPost);
-          console.log(response);
           expect(response.status).toBe(400);
           expect(response.body.error).toBe('Invalid description. Description should be up to 500 characters.');
         });
       });
+
+    // Add full blog post fields with main_image that exceeds 1MB
+    describe('POST /api/blog/create', () => {
+      it('should return an error message for file size exceed 1MB', async () => {
+        const newPost = {
+          title: 'My Blog Title3',
+          description: 'Blog description',
+          date_time: 1684003207,
+        };
+    
+        const response = await request(BASE_HREF)
+          .post('/api/blog/create')
+          .field('Content-Type', 'multipart/form-data')
+          .attach('main_image',  fs.createReadStream(path.join(__dirname, 'bigSizedImage.jpg')))
+          .attach('additional_images',  fs.createReadStream(path.join(__dirname, 'additionalImage.jpg')))
+          .field(newPost);
+          expect(response.status).toBe(400);
+          expect(response.body.error).toBe('File too large. Maximum size is 1MB.');
+      });
+    });
 
     // Test GET /api/blog/all endpoint
     describe('GET /api/blog/all', () => {

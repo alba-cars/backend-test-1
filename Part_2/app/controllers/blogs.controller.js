@@ -119,7 +119,11 @@ files.forEach(async (file) => {
  
    return res.json(blogPost);
 
-
+  //   return res.json({
+  //     status: 200,
+  //     result: blogPost,
+  //     message:"Blog post created successfully"
+  // });
 
 }
 
