@@ -2,9 +2,15 @@
 
 Using JestJS add these tests to the Part 1 Test
 
-npm install
-npm start 
-npm test 
+## Contributor
+
+Contributor: Sethulakshmi
+Profile : https://www.linkedin.com/in/sethu-lakshmi-7358a4199/
+
+## Installaion and setup project 
+    npm install 
+    npm start
+    npm test
 
 ## Add blog post succeeded Test
 
