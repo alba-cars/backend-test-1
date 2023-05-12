@@ -15,7 +15,7 @@ function validateInputs(title, description,date_time) {
   
   const unixTimestamp = Math.floor(new Date().getTime() / 1000);
     if (!date_time || isNaN(date_time) || date_time < unixTimestamp) {
-      return 'Invalid or missing date_time';
+      return 'Date time is not unix time or missing date_time';
     }
   
     return null;
