@@ -24,11 +24,11 @@ POST /api/v1/auth/login&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(Login User)<br />
 
 ## Add Blog post CRUD
 
-GET /api/v1/blog/ - Get all blog posts
-POST /api/v1/blog/ - Create a post
-GET /api/v1/blog/ :id - Get a blog post (id is database document id)
-PUT /api/v1/blog/:id - Update a blog post
-DELETE /api/v1/blog/:id - Delete a blog post
+GET /api/v1/blog/ - Get all blog posts<br />
+POST /api/v1/blog/ - Create a post<br />
+GET /api/v1/blog/ :id - Get a blog post (id is database document id)<br />
+PUT /api/v1/blog/:id - Update a blog post<br />
+DELETE /api/v1/blog/:id - Delete a blog post<br />
 
 You have to add blog_post CRUD to this CLEAN architecture (refer to end of README for how the architecture works)<br />
 You have to add it in the same way the Users CRUD was made with validation using Joi
