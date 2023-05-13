@@ -3,6 +3,15 @@
 This CLEAN architecture example includes a User CRUD and Auth Login by default, plus MongoDB support<br />
 You have to install MongoDB locally and specify a test collection url in the (.env) file like how its written in the (.env.example)
 
+## Contributor
+
+Contributor: Sethulakshmi
+Profile : https://www.linkedin.com/in/sethu-lakshmi-7358a4199/
+
+## Installaion and setup project 
+    npm install 
+    npm start
+
 # Current APIs
 
 GET /api/v1/users&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(Get All Users)<br />
@@ -14,6 +23,12 @@ DELETE /api/v1/users/:id&nbsp;&nbsp;&nbsp;(Delete User by ID) (Requires Valid Ac
 POST /api/v1/auth/login&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(Login User)<br />
 
 ## Add Blog post CRUD
+
+GET /api/v1/blog/ - Get all blog posts
+POST /api/v1/blog/ - Create a post
+GET /api/v1/blog/ :id - Get a blog post (id is database document id)
+PUT /api/v1/blog/:id - Update a blog post
+DELETE /api/v1/blog/:id - Delete a blog post
 
 You have to add blog_post CRUD to this CLEAN architecture (refer to end of README for how the architecture works)<br />
 You have to add it in the same way the Users CRUD was made with validation using Joi
