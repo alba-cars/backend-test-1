@@ -18,26 +18,40 @@ import UserSerializer from '../../interfaces/serializers/UserSerializer';
 
 // Mongo
 import UserRepositoryMongo from '../repositories/mongoose/UserRepositoryMongo';
+import BlogRepository from '../../domain/repositories/BlogRepository';
+import { BlogPostMongooseRepository } from '../repositories/mongoose/BlogPostMongooseRepository';
+import BlogSerializer from '../../interfaces/serializers/BlogSerializer';
 
 export type ServiceLocator = {
+  get<T>(name: keyof ServiceLocator): T;
+
   passwordManager: PasswordManager,
   accessTokenManager: AccessTokenManager,
 
   userSerializer: Serializer,
+  blogSerializer: Serializer,
 
   userRepository?: UserRepository,
+  blogRepository?: BlogRepository,
 };
 
 function buildBeans() {
   const beans: ServiceLocator = {
+
+    get<T>(name: keyof ServiceLocator) {
+      return beans[name] as T;
+    },
+
     passwordManager: new BcryptPasswordManager(),
     accessTokenManager: new JwtAccessTokenManager(),
 
     userSerializer: new UserSerializer(),
+    blogSerializer: new BlogSerializer(),
   };
 
   if (environment.database.dialect === constants.SUPPORTED_DATABASE.MONGO) {
     beans.userRepository = new UserRepositoryMongo();
+    beans.blogRepository = new BlogPostMongooseRepository();
   }
 
   return beans;

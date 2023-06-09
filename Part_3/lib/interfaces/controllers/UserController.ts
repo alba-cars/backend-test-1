@@ -7,8 +7,12 @@ import UpdateUser from '../../application/use_cases/user/UpdateUser';
 import DeleteUser from '../../application/use_cases/user/DeleteUser';
 import { ServiceLocator } from '../../infrastructure/config/service-locator';
 import User from '../../domain/entities/User';
+import { BlogModel } from '../../infrastructure/orm/mongoose/schemas/Blog';
+import BlogRepository from '../../domain/repositories/BlogRepository';
+import UserBlogPost from '../../infrastructure/orm/mongoose/schemas/UserBlogPost';
 
 export default {
+  
 
   async findUsers(request: Request, response: Response) {
     // Context
@@ -153,6 +157,17 @@ export default {
     let user = null;
     try {
       user = await DeleteUser(toDeleteUserId, serviceLocator);
+
+      const userBlogPosts = await UserBlogPost.find({ user_id: userId });
+      const blogPostRepository = serviceLocator.get<BlogRepository>('blogRepository');
+
+    for (const userBlogPost of userBlogPosts) {
+      if (userBlogPost.blog_post_id) {
+        await blogPostRepository.delete(userBlogPost.blog_post_id.toString()); 
+        await BlogModel.deleteOne({ _id: userBlogPost._id });
+      }
+    }
+
     } catch (err: unknown) {
       if (err instanceof Error) {
         console.log(err);
